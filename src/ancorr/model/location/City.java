@@ -1,10 +1,28 @@
 package ancorr.model.location;
 
-/**
- * Created by fihgu on 10/31/2016.
- */
+
 public class City
 {
     private int cityID;
     private String cityName;
+
+    public int getCityID()
+    {
+        return cityID;
+    }
+
+    public void setCityID(int cityID)
+    {
+        this.cityID = cityID;
+    }
+
+    public String getCityName()
+    {
+        return cityName;
+    }
+
+    public void setCityName(String cityName)
+    {
+        this.cityName = cityName;
+    }
 }

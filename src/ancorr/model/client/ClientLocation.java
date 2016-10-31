@@ -1,20 +1,82 @@
 package ancorr.model.client;
 
-import ancorr.model.location.City;
-import ancorr.model.location.Country;
-import ancorr.model.location.StateOrProvince;
-import ancorr.model.location.ZipCode;
-
-/**
- * Created by fihgu on 10/31/2016.
- */
 public class ClientLocation
 {
     private int clientLocationId;
     private int clientId;
     private String address;
-    private City city;
-    private Country country;
-    private StateOrProvince stateOrProvince;
-    private ZipCode postalCode;
+    private int cityId;
+    private int countryId;
+    private int stateOrProvinceId;
+    private int postalCodeId;
+
+    public int getClientLocationId()
+    {
+        return clientLocationId;
+    }
+
+    public void setClientLocationId(int clientLocationId)
+    {
+        this.clientLocationId = clientLocationId;
+    }
+
+    public int getClientId()
+    {
+        return clientId;
+    }
+
+    public void setClientId(int clientId)
+    {
+        this.clientId = clientId;
+    }
+
+    public String getAddress()
+    {
+        return address;
+    }
+
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
+
+    public int getCityId()
+    {
+        return cityId;
+    }
+
+    public void setCityId(int cityId)
+    {
+        this.cityId = cityId;
+    }
+
+    public int getCountryId()
+    {
+        return countryId;
+    }
+
+    public void setCountryId(int countryId)
+    {
+        this.countryId = countryId;
+    }
+
+    public int getStateOrProvinceId()
+    {
+        return stateOrProvinceId;
+    }
+
+    public void setStateOrProvinceId(int stateOrProvinceId)
+    {
+        this.stateOrProvinceId = stateOrProvinceId;
+    }
+
+    public int getPostalCodeId()
+    {
+        return postalCodeId;
+    }
+
+    public void setPostalCodeId(int postalCodeId)
+    {
+        this.postalCodeId = postalCodeId;
+    }
 }

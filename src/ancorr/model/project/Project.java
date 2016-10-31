@@ -2,7 +2,7 @@ package ancorr.model.project;
 
 import java.sql.Date;
 
-public class Proejct
+public class Project
 {
     private int clientId;
     private int supervisorId;

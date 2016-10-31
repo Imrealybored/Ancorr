@@ -1,10 +1,28 @@
 package ancorr.model.location;
 
-/**
- * Created by fihgu on 10/31/2016.
- */
+
 public class StateOrProvince
 {
     private int stateOrProvinceId;
     private String stateOrProvinceName;
+
+    public int getStateOrProvinceId()
+    {
+        return stateOrProvinceId;
+    }
+
+    public void setStateOrProvinceId(int stateOrProvinceId)
+    {
+        this.stateOrProvinceId = stateOrProvinceId;
+    }
+
+    public String getStateOrProvinceName()
+    {
+        return stateOrProvinceName;
+    }
+
+    public void setStateOrProvinceName(String stateOrProvinceName)
+    {
+        this.stateOrProvinceName = stateOrProvinceName;
+    }
 }

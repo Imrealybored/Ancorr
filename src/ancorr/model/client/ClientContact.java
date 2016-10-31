@@ -1,12 +1,50 @@
 package ancorr.model.client;
 
-/**
- * Created by fihgu on 10/31/2016.
- */
+
 public class ClientContact
 {
     private int clientContactId;
     private int clientId;
     private String emailAddress;
     private String phone;
+
+    public int getClientContactId()
+    {
+        return clientContactId;
+    }
+
+    public void setClientContactId(int clientContactId)
+    {
+        this.clientContactId = clientContactId;
+    }
+
+    public int getClientId()
+    {
+        return clientId;
+    }
+
+    public void setClientId(int clientId)
+    {
+        this.clientId = clientId;
+    }
+
+    public String getEmailAddress()
+    {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress)
+    {
+        this.emailAddress = emailAddress;
+    }
+
+    public String getPhone()
+    {
+        return phone;
+    }
+
+    public void setPhone(String phone)
+    {
+        this.phone = phone;
+    }
 }
