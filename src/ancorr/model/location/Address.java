@@ -1,44 +1,32 @@
-package ancorr.model.item;
+package ancorr.model.location;
 
-
-public class WarehouseLocation
+public class Address
 {
-    private int warehouseLocationId;
-    private int warehouseId;
-    private String warehouseAddress;
+    private int addressId;
+    private String street;
     private int cityId;
     private int stateOrProvinceId;
     private int zipCodeId;
     private int countryId;
 
-    public int getWarehouseLocationId()
+    public int getAddressId()
     {
-        return warehouseLocationId;
+        return addressId;
     }
 
-    public void setWarehouseLocationId(int warehouseLocationId)
+    public void setAddressId(int addressId)
     {
-        this.warehouseLocationId = warehouseLocationId;
+        this.addressId = addressId;
     }
 
-    public int getWarehouseId()
+    public String getStreet()
     {
-        return warehouseId;
+        return street;
     }
 
-    public void setWarehouseId(int warehouseId)
+    public void setStreet(String street)
     {
-        this.warehouseId = warehouseId;
-    }
-
-    public String getWarehouseAddress()
-    {
-        return warehouseAddress;
-    }
-
-    public void setWarehouseAddress(String warehouseAddress)
-    {
-        this.warehouseAddress = warehouseAddress;
+        this.street = street;
     }
 
     public int getCityId()

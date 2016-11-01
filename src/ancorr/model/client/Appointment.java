@@ -6,6 +6,7 @@ import java.sql.Time;
 public class Appointment
 {
     private int appointmentId;
+    private int clientId;
     private Date appointmentDate;
     private Time appointmentTime;
     private String appSubject;
@@ -48,5 +49,15 @@ public class Appointment
     public void setAppSubject(String appSubject)
     {
         this.appSubject = appSubject;
+    }
+
+    public int getClientId()
+    {
+        return clientId;
+    }
+
+    public void setClientId(int clientId)
+    {
+        this.clientId = clientId;
     }
 }

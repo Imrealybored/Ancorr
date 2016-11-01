@@ -4,6 +4,7 @@ package ancorr.model.item;
 public class Material
 {
     private int materialId;
+    private int warehouseID;
     private String materialName;
     private double materialCost;
     private int materialQuantity;
@@ -17,6 +18,16 @@ public class Material
     public void setMaterialId(int materialId)
     {
         this.materialId = materialId;
+    }
+
+    public int getWarehouseID()
+    {
+        return warehouseID;
+    }
+
+    public void setWarehouseID(int warehouseID)
+    {
+        this.warehouseID = warehouseID;
     }
 
     public String getMaterialName()

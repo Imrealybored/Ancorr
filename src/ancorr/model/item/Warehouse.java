@@ -4,6 +4,7 @@ package ancorr.model.item;
 public class Warehouse
 {
     private int warehouseId;
+    private int addressId;
     private String warehouseName;
     private String warehouseType;
 
@@ -15,6 +16,16 @@ public class Warehouse
     public void setWarehouseId(int warehouseId)
     {
         this.warehouseId = warehouseId;
+    }
+
+    public int getAddressId()
+    {
+        return addressId;
+    }
+
+    public void setAddressId(int addressId)
+    {
+        this.addressId = addressId;
     }
 
     public String getWarehouseName()

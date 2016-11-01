@@ -6,6 +6,7 @@ public class VendorContract
 {
     private int vendorContractId;
     private int vendorId;
+    private int addressId;
     private String contractDesc;
     private Date contractStartDate;
     private Date contractEndDate;

@@ -5,6 +5,7 @@ import java.sql.Date;
 public class ProjectContract
 {
     private int projectContractId;
+    private int addressId;
     private String projectContractDesc;
     private int projectId;
     private Date contractStartDate;
@@ -18,6 +19,16 @@ public class ProjectContract
     public void setProjectContractId(int projectContractId)
     {
         this.projectContractId = projectContractId;
+    }
+
+    public int getAddressId()
+    {
+        return addressId;
+    }
+
+    public void setAddressId(int addressId)
+    {
+        this.addressId = addressId;
     }
 
     public String getProjectContractDesc()

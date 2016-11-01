@@ -1,4 +1,4 @@
-package ancorr.model.location;
+package ancorr.model.employee;
 
 
 public class Position
