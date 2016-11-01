@@ -1,4 +1,6 @@
-package ancorr.view;
+package ancorr;
+
+import ancorr.view.Login;
 
 import javax.swing.*;
 import java.awt.*;
