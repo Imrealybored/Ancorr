@@ -3,7 +3,7 @@ package ancorr.model.vendor;
 /**
  * A vender's bidding on a certain material. a vendor can list a bid on multiple materials.
  */
-public class VenderBidding
+public class VendorBidding
 {
     public int id;
     public int vendorId;
