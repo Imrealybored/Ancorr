@@ -1,6 +1,6 @@
 package ancorr.model.employee;
 
-public class EmployeeBenifit
+public class EmployeeBenefit
 {
     public int id;
     public int employeeId;
