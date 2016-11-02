@@ -1,6 +1,9 @@
 package ancorr.model.client;
 
-public class ClientStatus
+/**
+ * created, invoiced, paid.
+ */
+public class ClientBillStatus
 {
     public int id;
 

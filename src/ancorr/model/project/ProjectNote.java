@@ -1,14 +1,14 @@
-package ancorr.model.client;
+package ancorr.model.project;
 
 import java.sql.Date;
 import java.sql.Time;
 
-public class Appointment
+public class ProjectNote
 {
     public int id;
-    public int clientId;
+    public int projectId;
 
     public Date date;
     public Time time;
-    public String subject;
+    public String note;
 }

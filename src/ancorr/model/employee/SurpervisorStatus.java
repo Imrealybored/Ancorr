@@ -1,7 +1,6 @@
 package ancorr.model.employee;
 
-
-public class EmployeeStatus
+public class SurpervisorStatus
 {
     public int id;
 
