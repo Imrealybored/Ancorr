@@ -11,8 +11,9 @@ public class EquipmentSchedule
     public int id;
     public int equipmentId;
 
-    public Date arrivalDate;
-    public Time timeOfArrival;
-    public Date departureDate;
-    public Time timeOfDeparture;
+    public Date leaveDate;
+    public Time leaveTime;
+    public Date returnDate;
+    public Time returnTime;
+	public String reason;
 }
