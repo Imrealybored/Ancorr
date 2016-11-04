@@ -1,4 +1,4 @@
-package ancorr.controller;
+package ancorr.controller.employee;
 
 import javax.swing.*;
 

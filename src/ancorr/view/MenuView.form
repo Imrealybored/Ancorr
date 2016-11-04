@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ancorr.view.MenuView">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="15" vgap="10">
+    <margin top="5" left="5" bottom="5" right="5"/>
+    <constraints>
+      <xy x="20" y="20" width="618" height="352"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="77e8c" class="javax.swing.JButton" binding="employeeButton">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Employees"/>
+        </properties>
+      </component>
+      <component id="d76d9" class="javax.swing.JButton" binding="clientButton">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Clients"/>
+        </properties>
+      </component>
+      <component id="a64c9" class="javax.swing.JButton" binding="vendorButton">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Vendors"/>
+        </properties>
+      </component>
+      <component id="1f407" class="javax.swing.JButton" binding="appointmentButton">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Appointments"/>
+        </properties>
+      </component>
+      <component id="81271" class="javax.swing.JButton" binding="projectButton">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Projects"/>
+        </properties>
+      </component>
+      <component id="21222" class="javax.swing.JButton" binding="equipmentButton">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Equipments"/>
+        </properties>
+      </component>
+      <component id="53925" class="javax.swing.JButton" binding="materialsButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Materials"/>
+        </properties>
+      </component>
+      <component id="3956b" class="javax.swing.JButton" binding="transactionButton">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Transactions"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

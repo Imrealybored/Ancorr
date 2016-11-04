@@ -1,6 +1,6 @@
-package ancorr.view;
+package ancorr.view.employee;
 
-import ancorr.controller.LoginManager;
+import ancorr.controller.employee.LoginManager;
 
 import javax.swing.*;
 
