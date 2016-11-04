@@ -17,7 +17,7 @@ public class AppointmentView
     private void createUIComponents()
     {
         timeSpinner = new JSpinner( new SpinnerDateModel() );
-        JSpinner.DateEditor timeEditor = new JSpinner.DateEditor(timeSpinner, "dd/mm/yy - HH:mm:ss");
+        JSpinner.DateEditor timeEditor = new JSpinner.DateEditor(timeSpinner, "MM/dd/yy - HH:mm:ss");
         timeSpinner.setEditor(timeEditor);
         timeSpinner.setValue(new Date());
     }
