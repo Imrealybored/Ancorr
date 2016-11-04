@@ -10,5 +10,6 @@ public class Main
         MainApplication mainApplication = new MainApplication(null);
 
         mainApplication.start();
+
     }
 }
