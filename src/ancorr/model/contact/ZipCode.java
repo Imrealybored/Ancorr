@@ -5,5 +5,5 @@ public class ZipCode
 {
     public int id;
 
-    public int zipcode;
+    public int zipCode;
 }

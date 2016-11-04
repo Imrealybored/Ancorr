@@ -7,5 +7,5 @@ public class Supervisor
 {
     public int id;
     public int employeeId;
-    public int surpervisorStatusId;
+    public int supervisorStatusId;
 }

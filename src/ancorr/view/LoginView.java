@@ -1,0 +1,56 @@
+package ancorr.view;
+
+import ancorr.controller.LoginManager;
+
+import javax.swing.*;
+
+public class LoginView
+{
+    final LoginManager loginManager;
+
+    private JTabbedPane tabPanel;
+    private JLabel loginResponseLabel;
+    private JPasswordField loginPasswordField;
+    private JTextField loginUsernameField;
+    private JButton loginButton;
+    private JTextField changePasswordUsernameField;
+    private JPasswordField oldPasswordField;
+    private JPasswordField newPasswordField;
+    private JPasswordField confirmPasswordField;
+    private JButton confirmButton;
+    private JLabel changePasswordResponseLabel;
+
+    private JPanel mainPanel;
+
+    public LoginView(LoginManager loginManager)
+    {
+        this.loginManager = loginManager;
+
+        //copy login user name to change password password field when tab changes.
+        tabPanel.addChangeListener(event -> changePasswordUsernameField.setText(loginUsernameField.getText()));
+
+
+        confirmButton.addActionListener(event ->
+        {
+            String username = changePasswordUsernameField.getText();
+            String oldPassword = new String(oldPasswordField.getPassword());
+            String newPassword = new String(newPasswordField.getPassword());
+            String confirmPassword = new String(confirmPasswordField.getPassword());
+
+            loginManager.changePassword(username,oldPassword,newPassword,confirmPassword,changePasswordResponseLabel);
+        });
+
+        loginButton.addActionListener(e ->
+        {
+            String username = loginUsernameField.getText();
+            String password = new String(loginPasswordField.getPassword());
+
+            loginManager.login(username, password, loginResponseLabel);
+        });
+    }
+
+    public JPanel getMainPanel()
+    {
+        return mainPanel;
+    }
+}

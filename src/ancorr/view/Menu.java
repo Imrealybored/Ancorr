@@ -1,16 +1,17 @@
 package ancorr.view;
 
+import ancorr.controller.MainApplication;
+
 import javax.swing.*;
 
 public class Menu
 {
-    JFrame mainFrame;
+    private final MainApplication mainApplication;
+
     private JPanel mainPanel;
 
-    public Menu(JFrame mainFrame)
+    public Menu(MainApplication mainApplication)
     {
-        this.mainFrame = mainFrame;
-        mainFrame.setContentPane(mainPanel);
-        mainFrame.pack();
+        this.mainApplication = mainApplication;
     }
 }

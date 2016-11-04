@@ -1,7 +1,7 @@
 package ancorr.model.project;
 
 /**
- * planned, started, finsihed.
+ * planned, started, finished.
  */
 public class ProjectStatus
 {

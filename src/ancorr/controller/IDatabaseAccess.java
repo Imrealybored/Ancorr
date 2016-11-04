@@ -14,7 +14,7 @@ import java.util.List;
 * Getter methods which requires a list as return type are responsible to get all the data entry of a type,<br> 
 * or all data related to a given argument(if exists)<br>
 */
-public interface DatabaseAccess
+public interface IDatabaseAccess
 {
 	//Client: ///////////////////////////////
 	List<Appointment> getAppointments();
@@ -41,8 +41,8 @@ public interface DatabaseAccess
 	void setAddress(Address address);
 	
 	List<City> getCities();
-	City getCity(int id)
-	void setCity(City city)
+	City getCity(int id);
+	void setCity(City city);
 	
 	Contact getContact(int id);
 	void setContact(Contact contact);
@@ -52,7 +52,7 @@ public interface DatabaseAccess
 	void setCountry(Country country);
 	
 	List<StateOrProvince> getStateOrProvinces();
-	StateOrProvince getStateOrProvince(int id)
+	StateOrProvince getStateOrProvince(int id);
 	void setStateOrProvince(StateOrProvince stateOrProvince);
 	
 	List<ZipCode> getZipCodes();
@@ -101,14 +101,18 @@ public interface DatabaseAccess
 	
 	List<Supervisor> getSupervisors();
 	Supervisor getSupervisor(int id);
-	void setSupervisor(Supervisor supervisor)
+	void setSupervisor(Supervisor supervisor);
 	void deleteSupervisor(int id);
 	
 	List<SupervisorStatus> getSupervisorStatus();
 	SupervisorStatus getSupervisorStatus(int id);
-	
+
 	List<SystemUser> getSystemUsers();
 	SystemUser getSystemUser(int id);
+	/**
+	 * use WHERE to find the systemUser, if not found, return null.
+	 */
+	SystemUser getSystemUser(String username, String password);
 	void setSystemUser(SystemUser systemUser);
 	void deleteSystemUser(int id);
 	
@@ -121,7 +125,7 @@ public interface DatabaseAccess
 	void setEquipment(Equipment equipment);
 	void deleteEquipment(int id);
 	
-	List<EquipmentMaintenance> getEquipmentMaintenances(Equipment equipment);
+	List<EquipmentMaintenance> getEquipmentMaintenanceList(Equipment equipment);
 	EquipmentMaintenance getEquipmentMaintenance(int id);
 	void setEquipmentMaintenance(EquipmentMaintenance equipmentMaintenance);
 	
@@ -177,13 +181,13 @@ public interface DatabaseAccess
 	void setProject(Project project);
 	
 	//List<ProjectNote> getProjectNotes();
-	List<ProjectNote> getProjectNotes(Project proejct);
+	List<ProjectNote> getProjectNotes(Project project);
 	ProjectNote getProjectNote();
 	void setProjectNote(ProjectNote projectNote);
 	
 	List<ProjectSchedule> getProjectSchedules();
 	List<ProjectSchedule> getProjectSchedules(Project project);
-	ProjectSchedule getProjectShedule(int id);
+	ProjectSchedule getProjectSchedule(int id);
 	void setProjectSchedule(ProjectSchedule projectSchedule);
 	void deleteProjectSchedule(int id);
 	
@@ -197,19 +201,19 @@ public interface DatabaseAccess
 	PurchaseHistory getPurchaseHistory(int id);
 	PurchaseHistory getPurchaseHistory(Transaction transaction);
 	PurchaseHistory getPurchaseHistory(MaterialStock materialStock);
-	void setPurchanseHistory(PurchaseHistory purchaseHistory);
+	void setPurchaseHistory(PurchaseHistory purchaseHistory);
 	
 	List<Vendor> getVendors();
 	Vendor getVendor(int id);
 	void setVendor(Vendor vendor);
 	
-	List<VendorBidding> getVendorBiddings();
-	List<VendorBidding> getVendorBiddings(Vendor vendor);
-	List<VendorBidding> getVendorBiddings(MaterialType materialType);
+	List<VendorBidding> getVendorBiddingList();
+	List<VendorBidding> getVendorBiddingList(Vendor vendor);
+	List<VendorBidding> getVendorBiddingList(MaterialType materialType);
 	VendorBidding getVendorBidding(int id);
 	void setVendorBidding(VendorBidding vendorBidding);
 	void deleteVendorBidding(int id);
 	
 	List<VendorStatus> getVendorStatus();
-	VendorStatus getVendorstatus(int id);
+	VendorStatus getVendorStatus(int id);
 }
