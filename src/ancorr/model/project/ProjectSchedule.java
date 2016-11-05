@@ -7,8 +7,8 @@ import java.sql.Date;
  */
 public class ProjectSchedule
 {
-    public int id;
-    public int projectId;
+    public Integer id;
+    public Integer projectId;
 
     public String subject;
     public Date startDate;

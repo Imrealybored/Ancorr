@@ -3,7 +3,7 @@ package ancorr.model.contact;
 
 public class ZipCode
 {
-    public int id;
+    public Integer id;
 
-    public int zipCode;
+    public Integer zipCode;
 }

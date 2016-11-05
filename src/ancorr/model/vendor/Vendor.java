@@ -2,8 +2,8 @@ package ancorr.model.vendor;
 
 public class Vendor
 {
-    public int id;
-    public int contactId;
+    public Integer id;
+    public Integer contactId;
 
     public String name;
 }

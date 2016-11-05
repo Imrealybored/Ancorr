@@ -8,8 +8,8 @@ import java.sql.Time;
  */
 public class EquipmentSchedule
 {
-    public int id;
-    public int equipmentId;
+    public Integer id;
+    public Integer equipmentId;
 
     public Date leaveDate;
     public Time leaveTime;

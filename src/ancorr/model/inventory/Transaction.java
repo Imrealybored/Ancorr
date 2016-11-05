@@ -8,10 +8,10 @@ import java.sql.Time;
  */
 public class Transaction
 {
-    public int transactionId;
-    public int transactionTypeId;
+    public Integer transactionId;
+    public Integer transactionTypeId;
 
     public Date date;
     public Time time;
-    public double amount;
+    public Double amount;
 }

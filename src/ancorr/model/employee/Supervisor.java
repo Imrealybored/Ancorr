@@ -5,7 +5,7 @@ package ancorr.model.employee;
  */
 public class Supervisor
 {
-    public int id;
-    public int employeeId;
-    public int supervisorStatusId;
+    public Integer id;
+    public Integer employeeId;
+    public Integer supervisorStatusId;
 }

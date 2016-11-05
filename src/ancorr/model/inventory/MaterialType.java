@@ -2,7 +2,7 @@ package ancorr.model.inventory;
 
 public class MaterialType
 {
-    public int id;
+    public Integer id;
 
     public String type;
 }

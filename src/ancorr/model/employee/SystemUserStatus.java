@@ -2,7 +2,7 @@ package ancorr.model.employee;
 
 public class SystemUserStatus
 {
-    public int id;
+    public Integer id;
 
-    public int description;
+    public Integer description;
 }

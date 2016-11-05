@@ -6,9 +6,9 @@ package ancorr.model.employee;
  */
 public class SystemUser
 {
-    public int id;
-    public int employeeId;
-    public int systemUserStatusId;
+    public Integer id;
+    public Integer employeeId;
+    public Integer systemUserStatusId;
 
     public String username;
     public String password;

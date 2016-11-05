@@ -3,8 +3,8 @@ package ancorr.model.employee;
 
 public class EmployeeMedicalRecord
 {
-    public int id;
-    public int employeeId;
+    public Integer id;
+    public Integer employeeId;
 
     public String conditions;
     public String physician;

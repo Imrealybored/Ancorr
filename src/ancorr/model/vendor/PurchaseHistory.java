@@ -5,9 +5,9 @@ package ancorr.model.vendor;
  */
 public class PurchaseHistory
 {
-    public int id;
-    public int vendorId;
-    public int materialTypeId;
-    public int materialStockId;
-    public int transactionId;
+    public Integer id;
+    public Integer vendorId;
+    public Integer materialTypeId;
+    public Integer materialStockId;
+    public Integer transactionId;
 }

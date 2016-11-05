@@ -3,7 +3,7 @@ package ancorr.model.contact;
 
 public class City
 {
-    public int id;
+    public Integer id;
 
     public String cityName;
 }

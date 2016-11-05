@@ -2,11 +2,11 @@ package ancorr.model.contact;
 
 public class Address
 {
-    public int id;
-    public int cityId;
-    public int stateOrProvinceId;
-    public int zipCodeId;
-    public int countryId;
+    public Integer id;
+    public Integer cityId;
+    public Integer stateOrProvinceId;
+    public Integer zipCodeId;
+    public Integer countryId;
 
     public String street;
 }

@@ -5,10 +5,10 @@ package ancorr.model.inventory;
  */
 public class MaterialStock
 {
-    public int id;
-    public int warehouseID;
-    public int materialTypeId;
+    public Integer id;
+    public Integer warehouseID;
+    public Integer materialTypeId;
 
-    public double originalQuantity;
-    public double quantity;
+    public Double originalQuantity;
+    public Double quantity;
 }

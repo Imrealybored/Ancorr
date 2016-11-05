@@ -5,7 +5,7 @@ package ancorr.model.client;
  */
 public class ClientBillStatus
 {
-    public int id;
+    public Integer id;
 
     public String description;
 }

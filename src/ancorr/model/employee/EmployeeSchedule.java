@@ -7,8 +7,8 @@ import java.sql.Time;
  */
 public class EmployeeSchedule
 {
-    public int id;
-    public int employeeId;
+    public Integer id;
+    public Integer employeeId;
 
     public Time regularHours;
     public Time overTimeHours;

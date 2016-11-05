@@ -5,10 +5,10 @@ package ancorr.model.vendor;
  */
 public class VendorBidding
 {
-    public int id;
-    public int vendorId;
-    public int materialTypeId;
+    public Integer id;
+    public Integer vendorId;
+    public Integer materialTypeId;
 
-    public double quantity;
-    public double unitCost;
+    public Double quantity;
+    public Double unitCost;
 }

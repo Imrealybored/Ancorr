@@ -5,7 +5,7 @@ package ancorr.model.project;
  */
 public class ProjectStatus
 {
-    public int id;
+    public Integer id;
 
     public String description;
 }

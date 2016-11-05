@@ -2,7 +2,7 @@ package ancorr.model.employee;
 
 public class EmployeeBenefitType
 {
-    public int id;
+    public Integer id;
 
     public String type;
 }

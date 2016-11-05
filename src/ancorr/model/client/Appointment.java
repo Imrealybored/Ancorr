@@ -5,8 +5,8 @@ import java.sql.Time;
 
 public class Appointment
 {
-    public int id;
-    public int clientId;
+    public Integer id;
+    public Integer clientId;
 
     public Date date;
     public Time time;

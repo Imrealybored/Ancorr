@@ -5,10 +5,10 @@ package ancorr.model.client;
  */
 public class ClientBill
 {
-    public int id;
-    public int clientId;
-    public int transactionId;
-    public int billStatusId;
+    public Integer id;
+    public Integer clientId;
+    public Integer transactionId;
+    public Integer billStatusId;
 
     public String clientPaymentInfo;
 }

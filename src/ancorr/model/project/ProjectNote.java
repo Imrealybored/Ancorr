@@ -5,8 +5,8 @@ import java.sql.Time;
 
 public class ProjectNote
 {
-    public int id;
-    public int projectId;
+    public Integer id;
+    public Integer projectId;
 
     public Date date;
     public Time time;

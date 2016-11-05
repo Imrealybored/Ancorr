@@ -8,12 +8,12 @@ import java.sql.Time;
  */
 public class MaterialUsageHistory
 {
-    public int id;
-    public int materialTypeId;
-    public int projectId;
+    public Integer id;
+    public Integer materialTypeId;
+    public Integer projectId;
 
     public Date date;
     public Time time;
-    public double quantity;
+    public Double quantity;
     public String note;
 }

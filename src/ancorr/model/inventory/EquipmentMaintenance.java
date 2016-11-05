@@ -3,10 +3,10 @@ package ancorr.model.inventory;
 
 public class EquipmentMaintenance
 {
-    public int id;
-    public int equipmentId;
-    public int equipmentScheduleId;
-    public int transactionId;
+    public Integer id;
+    public Integer equipmentId;
+    public Integer equipmentScheduleId;
+    public Integer transactionId;
 
     public String description;
 }

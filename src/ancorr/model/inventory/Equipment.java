@@ -2,8 +2,8 @@ package ancorr.model.inventory;
 
 public class Equipment
 {
-    public int id;
-    public int equipmentTypeId;
+    public Integer id;
+    public Integer equipmentTypeId;
 
-    public int quantity;
+    public Integer quantity;
 }

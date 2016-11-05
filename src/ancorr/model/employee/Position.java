@@ -5,9 +5,9 @@ package ancorr.model.employee;
  */
 public class Position
 {
-    public int id;
+    public Integer id;
 
     public String title;
     public String description;
-    public double salary;
+    public Double salary;
 }

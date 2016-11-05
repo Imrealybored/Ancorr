@@ -2,7 +2,7 @@ package ancorr.model.inventory;
 
 public class WarehouseType
 {
-    public int id;
+    public Integer id;
 
     public String type;
 }

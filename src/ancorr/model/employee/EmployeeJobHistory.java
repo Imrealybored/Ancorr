@@ -3,8 +3,8 @@ package ancorr.model.employee;
 
 public class EmployeeJobHistory
 {
-    public int id;
-    public int employeeID;
+    public Integer id;
+    public Integer employeeID;
 
     public String duties;
     public String evaluation;
