@@ -27,8 +27,7 @@ public class MainApplication
 
     public void start()
     {
-        mainFrame.setContentPane(new LoginView(loginManager).getMainPanel());
-        mainFrame.pack();
+        setContent(new LoginView(loginManager).getMainPanel());
         mainFrame.setVisible(true);
     }
 
@@ -37,9 +36,10 @@ public class MainApplication
         return databaseAccess;
     }
 
-    public JFrame getMainFrame()
+    public void setContent(JPanel contentPanel)
     {
-        return mainFrame;
+        mainFrame.setContentPane(contentPanel);
+        mainFrame.pack();
     }
 
     public LoginManager getLoginManager()

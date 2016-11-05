@@ -3,6 +3,8 @@ package ancorr.view.employee;
 import ancorr.controller.employee.LoginManager;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class LoginView
 {
@@ -47,6 +49,8 @@ public class LoginView
 
             loginManager.login(username, password, loginResponseLabel);
         });
+        loginPasswordField.addActionListener(e -> loginButton.doClick());
+        loginUsernameField.addActionListener(e -> loginPasswordField.grabFocus());
     }
 
     public JPanel getMainPanel()

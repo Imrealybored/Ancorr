@@ -2,6 +2,7 @@ package ancorr.controller.employee;
 
 import ancorr.controller.MainApplication;
 import ancorr.model.employee.SystemUser;
+import ancorr.view.MenuView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,8 +22,7 @@ public class LoginManager implements ILoginManager
         if(mainApplication.getDatabaseAccess().getSystemUser(username, password) != null)
         {
             this.currentUser = username;
-
-            //TODO: open main menu.
+            mainApplication.setContent(new MenuView(mainApplication).getMainPanel());
         }
         else
         {

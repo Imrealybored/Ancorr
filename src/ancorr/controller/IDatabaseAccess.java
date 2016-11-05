@@ -10,9 +10,10 @@ import java.util.List;
 
 /**
 * Setter methods are responsible for creating and altering data, but not deleting data, null check is not required.<br>
-* argument of setter methods may not contain an ID, which means it needs to be created.
+* argument of setter methods may not contain an ID, which means it needs to be created.<br>
 * Getter methods which requires a list as return type are responsible to get all the data entry of a type,<br> 
 * or all data related to a given argument(if exists)<br>
+* Getter methods that return a list will never return null, if no data is found, an empty list should be returned.
 */
 public interface IDatabaseAccess
 {

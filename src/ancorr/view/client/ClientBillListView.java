@@ -1,16 +1,15 @@
 package ancorr.view.client;
 
-import ancorr.controller.MainApplication;
-import ancorr.model.client.Appointment;
+import ancorr.model.client.ClientBill;
 import ancorr.view.ListView;
 
 import java.util.List;
 
-public class AppointmentListView extends ListView<Appointment>
+public class ClientBillListView extends ListView<ClientBill>
 {
-    public AppointmentListView(List<Appointment> list)
+    public ClientBillListView(List<ClientBill> itemList)
     {
-        super(list);
+        super(itemList);
     }
 
     @Override

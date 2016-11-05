@@ -13,6 +13,7 @@ public class AppointmentView
     private JButton cancelButton;
     private JComboBox clientComboBox;
     private JSpinner timeSpinner;
+    private JTextField textField1;
 
     private void createUIComponents()
     {
