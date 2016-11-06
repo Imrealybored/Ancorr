@@ -1,19 +1,31 @@
 package ancorr.view.client;
 
+import ancorr.controller.MainApplication;
+import ancorr.model.client.Appointment;
+import ancorr.model.client.Client;
+
 import javax.swing.*;
 import java.util.Date;
 
-/**
- * Created by fihgu on 11/4/2016.
- */
 public class AppointmentView
 {
     private JPanel mainPanel;
     private JButton confirmButton;
     private JButton cancelButton;
-    private JComboBox clientComboBox;
+    private JComboBox<Client> clientComboBox;
     private JSpinner timeSpinner;
     private JTextField textField1;
+
+    public AppointmentView( Appointment appointment)
+    {
+        //Add all clients into comboBox.
+        MainApplication.getDatabaseAccess().getClients().forEach(client -> MainApplication.getDatabaseAccess().getClients());
+
+        if(appointment != null)
+        {
+            //TODO:
+        }
+    }
 
     private void createUIComponents()
     {
@@ -26,5 +38,11 @@ public class AppointmentView
     public JPanel getMainPanel()
     {
         return mainPanel;
+    }
+
+    public Appointment getAppointment()
+    {
+        //TODO:
+        return null;
     }
 }

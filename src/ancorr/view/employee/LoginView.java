@@ -8,8 +8,6 @@ import java.awt.event.ActionListener;
 
 public class LoginView
 {
-    final LoginManager loginManager;
-
     private JTabbedPane tabPanel;
     private JLabel loginResponseLabel;
     private JPasswordField loginPasswordField;
@@ -24,10 +22,8 @@ public class LoginView
 
     private JPanel mainPanel;
 
-    public LoginView(LoginManager loginManager)
+    public LoginView( )
     {
-        this.loginManager = loginManager;
-
         //copy login user name to change password password field when tab changes.
         tabPanel.addChangeListener(event -> changePasswordUsernameField.setText(loginUsernameField.getText()));
 
@@ -39,7 +35,7 @@ public class LoginView
             String newPassword = new String(newPasswordField.getPassword());
             String confirmPassword = new String(confirmPasswordField.getPassword());
 
-            loginManager.changePassword(username,oldPassword,newPassword,confirmPassword,changePasswordResponseLabel);
+            LoginManager.changePassword(username,oldPassword,newPassword,confirmPassword,changePasswordResponseLabel);
         });
 
         loginButton.addActionListener(e ->
@@ -47,7 +43,7 @@ public class LoginView
             String username = loginUsernameField.getText();
             String password = new String(loginPasswordField.getPassword());
 
-            loginManager.login(username, password, loginResponseLabel);
+            LoginManager.login(username, password, loginResponseLabel);
         });
         loginPasswordField.addActionListener(e -> loginButton.doClick());
         loginUsernameField.addActionListener(e -> loginPasswordField.grabFocus());

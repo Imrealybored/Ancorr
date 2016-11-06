@@ -8,7 +8,7 @@ import java.util.List;
 
 public class AppointmentListView extends ListView<Appointment>
 {
-    public AppointmentListView(List<Appointment> list)
+    public AppointmentListView( List<Appointment> list)
     {
         super(list);
     }
@@ -22,7 +22,11 @@ public class AppointmentListView extends ListView<Appointment>
     @Override
     public void onEdit()
     {
-
+        Appointment appointment = this.getSelectedItem();
+        if(appointment != null)
+        {
+            MainApplication.setContent(new AppointmentView(appointment).getMainPanel());
+        }
     }
 
     @Override

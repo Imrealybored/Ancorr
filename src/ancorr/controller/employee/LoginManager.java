@@ -7,22 +7,16 @@ import ancorr.view.MenuView;
 import javax.swing.*;
 import java.awt.*;
 
-public class LoginManager implements ILoginManager
+public class LoginManager
 {
-    private String currentUser;
-    private final MainApplication mainApplication;
+    private static String currentUser;
 
-    public LoginManager(MainApplication mainApplication)
+    public static void login(String username, String password, JLabel responseLabel)
     {
-        this.mainApplication = mainApplication;
-    }
-
-    public void login(String username, String password, JLabel responseLabel)
-    {
-        if(mainApplication.getDatabaseAccess().getSystemUser(username, password) != null)
+        if(MainApplication.getDatabaseAccess().getSystemUser(username, password) != null)
         {
-            this.currentUser = username;
-            mainApplication.setContent(new MenuView(mainApplication).getMainPanel());
+            currentUser = username;
+            MainApplication.setContent(new MenuView().getMainPanel());
         }
         else
         {
@@ -31,15 +25,16 @@ public class LoginManager implements ILoginManager
         }
     }
 
-    public void changePassword(String username, String oldPassword, String newPassword, String confirmPassword, JLabel responseLabel)
+    public static void changePassword(String username, String oldPassword, String newPassword, String confirmPassword, JLabel responseLabel)
     {
-        SystemUser user = mainApplication.getDatabaseAccess().getSystemUser(username, oldPassword);
+        SystemUser user = MainApplication.getDatabaseAccess().getSystemUser(username, oldPassword);
+
         if (user != null)
         {
             if (newPassword.equals(confirmPassword))
             {
                 user.password = newPassword;
-                mainApplication.getDatabaseAccess().setSystemUser(user);
+                MainApplication.getDatabaseAccess().setSystemUser(user);
 
                 responseLabel.setForeground(Color.GREEN);
                 responseLabel.setText("Password changed!");
@@ -55,8 +50,8 @@ public class LoginManager implements ILoginManager
         }
     }
 
-    public String getCurrentUser()
+    public static String getCurrentUser()
     {
-        return this.currentUser;
+        return currentUser;
     }
 }

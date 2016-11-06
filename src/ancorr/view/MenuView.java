@@ -9,8 +9,6 @@ import java.awt.event.ActionListener;
 
 public class MenuView
 {
-    private final MainApplication mainApplication;
-
     private JPanel mainPanel;
     private JButton employeeButton;
     private JButton clientButton;
@@ -21,11 +19,9 @@ public class MenuView
     private JButton appointmentButton;
     private JButton transactionButton;
 
-    public MenuView(MainApplication mainApplication)
+    public MenuView( )
     {
-        this.mainApplication = mainApplication;
-
-        appointmentButton.addActionListener(e -> mainApplication.setContent(new AppointmentListView(mainApplication.getDatabaseAccess().getAppointments()).getMainPanel()));
+        appointmentButton.addActionListener(e -> MainApplication.setContent(new AppointmentListView(MainApplication.getDatabaseAccess().getAppointments()).getMainPanel()));
     }
 
     public JPanel getMainPanel()
