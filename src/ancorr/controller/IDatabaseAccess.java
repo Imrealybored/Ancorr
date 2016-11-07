@@ -21,15 +21,18 @@ public interface IDatabaseAccess
 	List<Appointment> getAppointments();
 	Appointment getAppointment(int id);
 	void setAppointment(Appointment appointment);
+	void deleteAppointment(int id);
 	
 	List<Client> getClients();
 	Client getClient(int id);
 	void setClient(Client client);
+	void deleteClient(int id);
 	
 	List<ClientBill> getClientBills();
 	List<ClientBill> getClientBills(Client client);
 	ClientBill getClientBill(int id);
 	void setClientBill(ClientBill clientBill);
+	void deleteClientBill(int id);
 	
 	List<ClientBillStatus> getClientBillStatus();
 	ClientBillStatus getClientBillStatus(int id);
@@ -41,6 +44,7 @@ public interface IDatabaseAccess
 	Address getAddress(int id);
 	Address getAddress(Contact contact);
 	void setAddress(Address address);
+	//void deleteAddress(int id);
 	
 	List<City> getCities();
 	City getCity(int id);
@@ -65,6 +69,7 @@ public interface IDatabaseAccess
 	List<Employee> getEmployees();
 	Employee getEmployee(int id);
 	void setEmployee(Employee employee);
+	void deleteEmployee(int id);
 	
 	List<EmployeeBenefitType> getEmployeeBenefitTypes();
 	EmployeeBenefitType getEmployeeBenefitType(int id);
@@ -76,10 +81,12 @@ public interface IDatabaseAccess
 	List<EmployeeJobHistory> getEmployeeJobHistories(Employee employee);
 	EmployeeJobHistory getEmployeeJobHistory(int id);
 	void setEmployeeJobHistory(EmployeeJobHistory employeeJobHistory);
+	void deleteEmployeeJobHistory(int id);
 	
 	List<EmployeeMedicalRecord> getEmployeeMedicalRecords(Employee employee);
 	EmployeeMedicalRecord getEmployeeMedicalRecord(int id);
 	void setEmployeeMedicalRecord(EmployeeMedicalRecord employeeMedicalRecord);
+	void deleteEmployeeMedicalRecord(int id);
 	
 	EmployeeSchedule getEmployeeSchedule(int id);
 	EmployeeSchedule getEmployeeSchedule(Employee employee);
@@ -97,6 +104,7 @@ public interface IDatabaseAccess
 	List<Payroll> getPayrolls(Employee employee);
 	Payroll getPayroll(int id);
 	void setPayroll(Payroll payroll);
+	void deletePayroll(int id);
 	
 	List<Position> getPositions();
 	Position getPosition(int id);
@@ -130,10 +138,12 @@ public interface IDatabaseAccess
 	List<EquipmentMaintenance> getEquipmentMaintenanceList(Equipment equipment);
 	EquipmentMaintenance getEquipmentMaintenance(int id);
 	void setEquipmentMaintenance(EquipmentMaintenance equipmentMaintenance);
+	void deleteEquipmentMaintenance(int id);
 	
 	List<EquipmentSchedule> getEquipmentSchedules(Equipment equipment);
 	EquipmentSchedule getEquipmentSchedule(int id);
 	void setEquipmentSchedule(EquipmentSchedule equipmentSchedule);
+	void deleteEquipmentSchedule(int id);
 	
 	List<EquipmentType> getEquipmentTypes();
 	EquipmentType getEquipmentType(int id);
@@ -143,6 +153,7 @@ public interface IDatabaseAccess
 	List<MaterialStock> getMaterialStocks(Warehouse warehouse);
 	MaterialStock getMaterialStock(int id);
 	void setMaterialStock(MaterialStock materialStock);
+	void deleteMaterialStock(int id);
 	
 	List<MaterialType> getMaterialTypes();
 	MaterialType getMaterialType(int id);
@@ -152,17 +163,21 @@ public interface IDatabaseAccess
 	List<MaterialUsageHistory> getMaterialUsageHistories(Project project);
 	MaterialUsageHistory getMaterialUsageHistory(int id);
 	void setMaterialUsageHistory(MaterialUsageHistory materialUsageHistory);
+	void deleteMaterialUsageHistory(int id);
 	
 	List<Transaction> getTransactions();
 	List<Transaction> getTransactions(TransactionType transactionType);
 	Transaction getTransaction(int id);
 	void setTransaction(Transaction transaction);
+	void deleteTransaction(int id);
 	
 	List<TransactionType> getTransactionTypes();
 	TransactionType getTransactionType(int id);
 	
 	List<Warehouse> getWarehouses();
 	Warehouse getWarehouse(int id);
+	void setWarehouse(Warehouse warehouse);
+	void deleteWarehouse(int id);
 	
 	List<WarehouseType> getWarehouseTypes();
 	WarehouseType getWarehouseType(int id);
@@ -181,11 +196,13 @@ public interface IDatabaseAccess
 	List<Project> getProjects(ProjectStatus projectStatus);
 	Project getProject(int id);
 	void setProject(Project project);
+	void deleteProject(int id);
 	
 	//List<ProjectNote> getProjectNotes();
 	List<ProjectNote> getProjectNotes(Project project);
 	ProjectNote getProjectNote();
 	void setProjectNote(ProjectNote projectNote);
+	void deleteProjectNote(int id);
 	
 	List<ProjectSchedule> getProjectSchedules();
 	List<ProjectSchedule> getProjectSchedules(Project project);
@@ -204,10 +221,12 @@ public interface IDatabaseAccess
 	PurchaseHistory getPurchaseHistory(Transaction transaction);
 	PurchaseHistory getPurchaseHistory(MaterialStock materialStock);
 	void setPurchaseHistory(PurchaseHistory purchaseHistory);
+	void deletePurchaseHistory(int id);
 	
 	List<Vendor> getVendors();
 	Vendor getVendor(int id);
 	void setVendor(Vendor vendor);
+	void deleteVendor(int id);
 	
 	List<VendorBidding> getVendorBiddingList();
 	List<VendorBidding> getVendorBiddingList(Vendor vendor);

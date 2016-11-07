@@ -19,12 +19,10 @@ public class ClientView
     private JButton confirmButton;
     private JButton cancelButton;
 
-    private MainApplication mainApplication;
     private Client client;
 
-    public ClientView(MainApplication mainApplication, Client client)
+    public ClientView(Client client)
     {
-        this.mainApplication = mainApplication;
         this.client = client;
 
         if(this.client == null)
