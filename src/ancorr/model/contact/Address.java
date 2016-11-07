@@ -9,4 +9,16 @@ public class Address
     public Integer countryId;
 
     public String street;
+	
+	@Override
+	public String toString()
+	{
+		return street;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof Address && ((Address)obj).id == this.id;
+	}
 }

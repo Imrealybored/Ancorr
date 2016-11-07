@@ -8,4 +8,16 @@ public class EmployeeJobHistory
 
     public String duties;
     public String evaluation;
+	
+	@Override
+	public String toString()
+	{
+		return duties;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof EmployeeJobHistory && ((EmployeeJobHistory)obj).id == this.id;
+	}
 }

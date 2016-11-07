@@ -6,5 +6,17 @@ public class Assignment
     public Integer employeeId;
     public Integer projectId;
 
-    public String duties;
+    public String duty;
+	
+	@Override
+	public String toString()
+	{
+		return duty;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof Assignment && ((Assignment)obj).id == this.id;
+	}
 }

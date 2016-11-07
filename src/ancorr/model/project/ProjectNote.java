@@ -11,4 +11,16 @@ public class ProjectNote
     public Date date;
     public Time time;
     public String note;
+	
+	@Override
+	public String toString()
+	{
+		return note;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof ProjectNote && ((ProjectNote)obj).id == this.id;
+	}
 }

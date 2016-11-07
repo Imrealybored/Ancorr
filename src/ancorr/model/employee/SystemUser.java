@@ -12,4 +12,16 @@ public class SystemUser
 
     public String username;
     public String password;
+	
+	@Override
+	public String toString()
+	{
+		return username;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof SystemUser && ((SystemUser)obj).id == this.id;
+	}
 }

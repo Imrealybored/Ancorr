@@ -13,4 +13,16 @@ public class ProjectSchedule
     public String subject;
     public Date startDate;
     public Date endDate;
+	
+	@Override
+	public String toString()
+	{
+		return subject;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof ProjectSchedule && ((ProjectSchedule)obj).id == this.id;
+	}
 }

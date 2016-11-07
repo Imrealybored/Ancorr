@@ -8,4 +8,16 @@ public class Client
 
     public String firstName;
     public String lastName;
+	
+	@Override
+	public String toString()
+	{
+		return firstName + " " + lastName;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof Client && ((Client)obj).id == this.id;
+	}
 }

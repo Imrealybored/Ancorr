@@ -9,4 +9,16 @@ public class EmployeeMedicalRecord
     public String conditions;
     public String physician;
     public String insuranceProvider;
+	
+	@Override
+	public String toString()
+	{
+		return conditions;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof EmployeeMedicalRecord && ((EmployeeMedicalRecord)obj).id == this.id;
+	}
 }

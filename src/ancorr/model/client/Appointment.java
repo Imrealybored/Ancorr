@@ -13,4 +13,16 @@ public class Appointment
     public Date date;
     public Time time;
     public String subject;
+	
+	@Override
+	public String toString()
+	{
+		return subject;
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof Appointment && ((Appointment)obj).id == this.id;
+	}
 }

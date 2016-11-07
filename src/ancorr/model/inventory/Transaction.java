@@ -8,10 +8,22 @@ import java.sql.Time;
  */
 public class Transaction
 {
-    public Integer transactionId;
+    public Integer id;
     public Integer transactionTypeId;
 
     public Date date;
     public Time time;
     public Double amount;
+	
+	@Override
+	public String toString()
+	{
+		return "$" + amount;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof Transaction && ((Transaction)obj).id == this.id;
+	}
 }

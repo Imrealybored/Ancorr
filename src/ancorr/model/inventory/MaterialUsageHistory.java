@@ -15,5 +15,17 @@ public class MaterialUsageHistory
     public Date date;
     public Time time;
     public Double quantity;
-    public String note;
+    public String description;
+	
+	@Override
+	public String toString()
+	{
+		return description;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof MaterialUsageHistory && ((MaterialUsageHistory)obj).id == this.id;
+	}
 }

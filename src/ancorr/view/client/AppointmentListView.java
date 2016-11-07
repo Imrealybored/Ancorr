@@ -16,7 +16,7 @@ public class AppointmentListView extends ListView<Appointment>
     @Override
     public void onCreate()
     {
-        //TODO; finish it.
+        MainApplication.setContent(new AppointmentView(null).getMainPanel());
     }
 
     @Override
@@ -32,6 +32,6 @@ public class AppointmentListView extends ListView<Appointment>
     @Override
     public void onDelete()
     {
-
+		//TODO:
     }
 }

@@ -21,10 +21,12 @@ public class AppointmentView
         //Add all clients into comboBox.
         MainApplication.getDatabaseAccess().getClients().forEach(client -> MainApplication.getDatabaseAccess().getClients());
 
-        if(appointment != null)
+        if(appointment == null)
         {
-            //TODO:
+			appointment = new Appointment();
         }
+		
+		//TODO: init
     }
 
     private void createUIComponents()

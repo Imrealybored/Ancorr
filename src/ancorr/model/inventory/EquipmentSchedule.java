@@ -15,5 +15,17 @@ public class EquipmentSchedule
     public Time leaveTime;
     public Date returnDate;
     public Time returnTime;
-	public String reason;
+	public String description;
+	
+	@Override
+	public String toString()
+	{
+		return description;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return obj instanceof EquipmentSchedule && ((EquipmentSchedule)obj).id == this.id;
+	}
 }
