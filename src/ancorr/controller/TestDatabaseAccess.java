@@ -180,6 +180,12 @@ public class TestDatabaseAccess implements IDatabaseAccess
     }
 
     @Override
+    public Address getAddress(Contact contact)
+    {
+        return null;
+    }
+
+    @Override
     public void setAddress(Address address)
     {
 

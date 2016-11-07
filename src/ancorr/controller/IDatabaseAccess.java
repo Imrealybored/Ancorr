@@ -39,6 +39,7 @@ public interface IDatabaseAccess
 	
 	//Contact: ///////////////////////////////////
 	Address getAddress(int id);
+	Address getAddress(Contact contact);
 	void setAddress(Address address);
 	
 	List<City> getCities();
@@ -166,7 +167,7 @@ public interface IDatabaseAccess
 	List<WarehouseType> getWarehouseTypes();
 	WarehouseType getWarehouseType(int id);
 	
-	//Project: ////////////////////////////////
+	//project: ////////////////////////////////
 	
 	List<Assignment> getAssignments(Project project);
 	List<Assignment> getAssignments(Employee employee);
