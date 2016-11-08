@@ -35,7 +35,7 @@ public class ClientListView extends ListView<Client>
 		if(client != null)
 		{
 			this.itemList.remove(client);
-			MainApplication.getDatabaseAccess().deleteClient(client);
+			MainApplication.getDatabaseAccess().deleteClient(client.id);
 			this.update();
 		}
     }

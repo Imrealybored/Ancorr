@@ -6,7 +6,7 @@ import java.sql.Time;
 
 public class EmployeeShift
 {
-    public Integer shiftId;
+    public Integer id;
     public Integer scheduleId;
 
     public Date startDate;

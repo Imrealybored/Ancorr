@@ -42,7 +42,7 @@ public interface IDatabaseAccess
 	
 	//Contact: ///////////////////////////////////
 	Address getAddress(int id);
-	Address getAddress(Contact contact);
+	//Address getAddress(Contact contact);
 	void setAddress(Address address);
 	//void deleteAddress(int id);
 	
@@ -89,7 +89,7 @@ public interface IDatabaseAccess
 	void deleteEmployeeMedicalRecord(int id);
 	
 	EmployeeSchedule getEmployeeSchedule(int id);
-	EmployeeSchedule getEmployeeSchedule(Employee employee);
+	//EmployeeSchedule getEmployeeSchedule(Employee employee);
 	void setEmployeeSchedule(EmployeeSchedule EmployeeSchedule);
 	void deleteEmployeeSchedule(int id);
 	
@@ -111,6 +111,7 @@ public interface IDatabaseAccess
 	
 	List<Supervisor> getSupervisors();
 	Supervisor getSupervisor(int id);
+	Supervisor getSupervisor(Employee employee);
 	void setSupervisor(Supervisor supervisor);
 	void deleteSupervisor(int id);
 	
@@ -119,6 +120,7 @@ public interface IDatabaseAccess
 
 	List<SystemUser> getSystemUsers();
 	SystemUser getSystemUser(int id);
+	SystemUser getSystemUser(Employee employee);
 	/**
 	 * use WHERE to find the systemUser, if not found, return null.
 	 */
