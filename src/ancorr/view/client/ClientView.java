@@ -38,8 +38,8 @@ public class ClientView
 
     private void createUIComponents()
     {
-        billTabPanel = new ClientBillListView(mainApplication.getDatabaseAccess().getClientBills(client)).getMainPanel();
-        Contact contact = mainApplication.getDatabaseAccess().getContact(client.contactId);
+        billTabPanel = new ClientBillListView(MainApplication.getDatabaseAccess().getClientBills(client)).getMainPanel();
+        Contact contact = MainApplication.getDatabaseAccess().getContact(client.contactId);
         contactTabPanel = new ContactView(contact).getMainPanel();
     }
 }

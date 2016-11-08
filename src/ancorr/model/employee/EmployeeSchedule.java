@@ -1,5 +1,7 @@
 package ancorr.model.employee;
 
+import ancorr.controller.MainApplication;
+
 import java.sql.Time;
 
 /**
@@ -16,12 +18,13 @@ public class EmployeeSchedule
 	@Override
 	public String toString()
 	{
-		return subject;
+		Employee employee = MainApplication.getDatabaseAccess().getEmployee(employeeId);
+		return employee.toString();
 	}
 
 	@Override
 	public boolean equals(Object obj)
 	{
-		return obj instanceof Appointment && ((Appointment)obj).id == this.id;
+		return obj instanceof EmployeeSchedule && ((EmployeeSchedule)obj).id == this.id;
 	}
 }

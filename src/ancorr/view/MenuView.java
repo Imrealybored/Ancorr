@@ -2,6 +2,7 @@ package ancorr.view;
 
 import ancorr.controller.MainApplication;
 import ancorr.view.client.AppointmentListView;
+import ancorr.view.employee.EmployeeListView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -22,6 +23,7 @@ public class MenuView
     public MenuView( )
     {
         appointmentButton.addActionListener(e -> MainApplication.setContent(new AppointmentListView(MainApplication.getDatabaseAccess().getAppointments()).getMainPanel()));
+        employeeButton.addActionListener(e -> MainApplication.setContent(new EmployeeListView(MainApplication.getDatabaseAccess().getEmployees()).getMainPanel()));
     }
 
     public JPanel getMainPanel()

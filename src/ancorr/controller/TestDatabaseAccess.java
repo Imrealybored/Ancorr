@@ -25,7 +25,7 @@ public class TestDatabaseAccess implements IDatabaseAccess
 	@Override
 	public void deleteClient(int id)
 	{
-		clients.remove(id);;
+		clients.remove(id);
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class TestDatabaseAccess implements IDatabaseAccess
 	@Override
 	public void deleteEmployee(int id)
 	{
-		employeeHashMap.remove(id);;
+		employeeHashMap.remove(id);
 	}
 
 	@Override
@@ -527,6 +527,20 @@ public class TestDatabaseAccess implements IDatabaseAccess
     public EmployeeBenefit getEmployeeBenefit(int id)
     {
         return employeeBenefitHashMap.get(id);
+    }
+
+    @Override
+    public List<EmployeeBenefit> getEmployeeBenefits(Employee employee)
+    {
+        List<EmployeeBenefit> list = new LinkedList<>();
+        for(EmployeeBenefit benefit : employeeBenefitHashMap.values())
+        {
+            if(benefit.employeeId == employee.id)
+            {
+                list.add(benefit);
+            }
+        }
+        return list;
     }
 
     @Override

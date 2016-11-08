@@ -22,7 +22,7 @@ public class ContactView
 
     private void createUIComponents()
     {
-        Address address = MainApplication.getDatabaseAccess().getAddress(contact);
+        Address address = MainApplication.getDatabaseAccess().getAddress(contact.addressId);
         addressView = new AddressView(address);
     }
 

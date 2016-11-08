@@ -26,6 +26,9 @@ public class EmployeeView
     private JPasswordField passwordField;
     private JButton confirmButton;
     private JButton cancelButton;
+    private JPanel benefitPanel;
+    private JPanel jobHistoryPanel;
+    private JPanel payrollPanel;
 
     private Employee employee;
 
@@ -36,7 +39,24 @@ public class EmployeeView
 
     private void createUIComponents()
     {
-        EmployeeSchedule schedule = MainApplication.getDatabaseAccess().getEmployeeSchedule(employee);
+        EmployeeSchedule schedule;
+        if(employee.scheduleId != null)
+        {
+            schedule = MainApplication.getDatabaseAccess().getEmployeeSchedule(employee.scheduleId);
+        }
+        else
+        {
+            schedule = new EmployeeSchedule();
+        }
+
         employeeShiftListPanel = new EmployeeShiftListView(MainApplication.getDatabaseAccess().getEmployeeShifts(schedule)).getMainPanel();
+        benefitPanel = new EmployeeBenefitListView(MainApplication.getDatabaseAccess().getEmployeeBenefits(employee)).getMainPanel();
+        jobHistoryPanel = new EmployeeJobHistoryListView(MainApplication.getDatabaseAccess().getEmployeeJobHistories(employee)).getMainPanel();
+        payrollPanel = new PayrollListView(MainApplication.getDatabaseAccess().getPayrolls(employee)).getMainPanel();
+    }
+
+    public JPanel getMainPanel()
+    {
+        return mainPanel;
     }
 }

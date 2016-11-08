@@ -75,6 +75,7 @@ public interface IDatabaseAccess
 	EmployeeBenefitType getEmployeeBenefitType(int id);
 	
 	EmployeeBenefit getEmployeeBenefit(int id);
+	List<EmployeeBenefit> getEmployeeBenefits(Employee employee);
 	void setEmployeeBenefit(EmployeeBenefit employeeBenefit);
 	void deleteEmployeeBenefit(int id);
 	

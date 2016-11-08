@@ -2,7 +2,7 @@ package ancorr.model.vendor;
 
 public class VendorStatus
 {
-    public Integer vendorStatCode;
+    public Integer id;
 
     public String description;
 	
