@@ -19,112 +19,116 @@ public class TestDatabaseAccess implements IDatabaseAccess
 	@Override
 	public void deleteAppointment(int id)
 	{
-		// TODO: Implement this method
+		appointmentHashMap.remove(id);
 	}
 
 	@Override
 	public void deleteClient(int id)
 	{
-		// TODO: Implement this method
+		clients.remove(id);;
 	}
 
 	@Override
 	public void deleteClientBill(int id)
 	{
-		// TODO: Implement this method
+		clientBills.remove(id);
 	}
 
 	@Override
 	public void deleteEmployee(int id)
 	{
-		// TODO: Implement this method
+		employeeHashMap.remove(id);;
 	}
 
 	@Override
 	public void deleteEmployeeJobHistory(int id)
 	{
-		// TODO: Implement this method
+		employeeJobHistoryHashMap.remove(id);
 	}
 
 	@Override
 	public void deleteEmployeeMedicalRecord(int id)
 	{
-		// TODO: Implement this method
+		employeeMedicalRecordHashMap.remove(id);
 	}
 
 	@Override
 	public void deletePayroll(int id)
 	{
-		// TODO: Implement this method
+		payrollHashMap.remove(id);
 	}
 
 	@Override
 	public void deleteEquipmentMaintenance(int id)
 	{
-		// TODO: Implement this method
+		equipmentMaintenanceHashMap.remove(id);
 	}
 
 	@Override
 	public void deleteEquipmentSchedule(int id)
 	{
-		// TODO: Implement this method
+		equipmentScheduleHashMap.remove(id);
 	}
 
 	@Override
 	public void deleteMaterialStock(int id)
 	{
-		// TODO: Implement this method
+		materialStockHashMap.remove(id);
 	}
 
 	@Override
 	public void deleteMaterialUsageHistory(int id)
 	{
-		// TODO: Implement this method
+		materialUsageHistoryHashMap.remove(id);
 	}
 
 	@Override
 	public void deleteTransaction(int id)
 	{
-		// TODO: Implement this method
+		transactionHashMap.remove(id);
 	}
 
 	@Override
 	public void setWarehouse(Warehouse warehouse)
 	{
-		// TODO: Implement this method
+		if(warehouse.id == null)
+        {
+            warehouse.id = warehouseHashMap.size();
+        }
+        warehouseHashMap.put(warehouse.id, warehouse);
 	}
 
 	@Override
 	public void deleteWarehouse(int id)
 	{
-		// TODO: Implement this method
+		warehouseHashMap.remove(id);
 	}
 
 	@Override
 	public void deleteProject(int id)
 	{
-		// TODO: Implement this method
+		projectHashMap.remove(id);
 	}
 
 	@Override
 	public void deleteProjectNote(int id)
 	{
-		// TODO: Implement this method
+		projectNoteHashMap.remove(id);
 	}
 
 	@Override
 	public void deletePurchaseHistory(int id)
 	{
-		// TODO: Implement this method
+		purchaseHistoryHashMap.remove(id);
 	}
 
 	@Override
 	public void deleteVendor(int id)
 	{
-		// TODO: Implement this method
+		vendorHashMap.remove(id);
 	}
 	
-    HashMap<Integer, Appointment> appointmentHashMap = new HashMap<>();
+    private final HashMap<Integer, Appointment> appointmentHashMap = new HashMap<>();
     {
         Appointment appointment = new Appointment();
         appointment.id = appointmentHashMap.size();
@@ -868,7 +872,7 @@ public class TestDatabaseAccess implements IDatabaseAccess
 	{
 		for(SystemUser systemUser : systemUsers.values())
 		{
-			if(systemUser.employeeId == employeeId)
+			if(systemUser.employeeId == employee.id)
 			{
 				return systemUser;
 			}
@@ -987,194 +991,353 @@ public class TestDatabaseAccess implements IDatabaseAccess
 		equipmentMaintenanceHashMap.put(equipmentMaintenance.id, equipmentMaintenance);
     }
 
+    private final HashMap<Integer, EquipmentSchedule> equipmentScheduleHashMap = new HashMap<>();
+    {
+
+    }
+
     @Override
     public List<EquipmentSchedule> getEquipmentSchedules(Equipment equipment)
     {
-        return null;
+        List<EquipmentSchedule> list = new LinkedList<>();
+        for(EquipmentSchedule schedule : equipmentScheduleHashMap.values())
+        {
+            if(schedule.equipmentId == equipment.id)
+            {
+                list.add(schedule);
+            }
+        }
+
+        return list;
     }
 
     @Override
     public EquipmentSchedule getEquipmentSchedule(int id)
     {
-        return null;
+        return equipmentScheduleHashMap.get(id);
     }
 
     @Override
     public void setEquipmentSchedule(EquipmentSchedule equipmentSchedule)
     {
+        if(equipmentSchedule.id == null)
+        {
+            equipmentSchedule.id = equipmentScheduleHashMap.size();
+        }
 
+        equipmentScheduleHashMap.put(equipmentSchedule.id, equipmentSchedule);
+    }
+
+    private final HashMap<Integer, EquipmentType> equipmentTypeHashMap = new HashMap<>();
+    {
+        EquipmentType hammer = new EquipmentType();
+        hammer.id = equipmentTypeHashMap.size();
+        hammer.type = "hammer";
     }
 
     @Override
     public List<EquipmentType> getEquipmentTypes()
     {
-        return null;
+        return getValuesAsList(equipmentTypeHashMap);
     }
 
     @Override
     public EquipmentType getEquipmentType(int id)
     {
-        return null;
+        return equipmentTypeHashMap.get(id);
+    }
+
+    private final HashMap<Integer, MaterialStock> materialStockHashMap = new HashMap<>();
+    {
+
     }
 
     @Override
     public List<MaterialStock> getMaterialStocks()
     {
-        return null;
+        return getValuesAsList(materialStockHashMap);
     }
 
     @Override
     public List<MaterialStock> getMaterialStocks(MaterialType materialType)
     {
-        return null;
+        List<MaterialStock> list = new LinkedList<>();
+        for(MaterialStock stock : materialStockHashMap.values())
+        {
+            if(stock.materialTypeId == materialType.id)
+            {
+                list.add(stock);
+            }
+        }
+        return list;
     }
 
     @Override
     public List<MaterialStock> getMaterialStocks(Warehouse warehouse)
     {
-        return null;
+        List<MaterialStock> list = new LinkedList<>();
+        for(MaterialStock stock : materialStockHashMap.values())
+        {
+            if(stock.warehouseID == warehouse.id)
+            {
+                list.add(stock);
+            }
+        }
+        return list;
     }
 
     @Override
     public MaterialStock getMaterialStock(int id)
     {
-        return null;
+        return materialStockHashMap.get(id);
     }
 
     @Override
     public void setMaterialStock(MaterialStock materialStock)
     {
+        if(materialStock.id == null)
+        {
+            materialStock.id = materialStockHashMap.size();
+        }
 
+        materialStockHashMap.put(materialStock.id, materialStock);
+    }
+
+    private final HashMap<Integer, MaterialType> materialTypeHashMap = new HashMap<>();
+    {
+        MaterialType type = new MaterialType();
+        type.id = materialTypeHashMap.size();
+        type.type = "brick";
+        materialTypeHashMap.put(type.id, type);
     }
 
     @Override
     public List<MaterialType> getMaterialTypes()
     {
-        return null;
+        return getValuesAsList(materialTypeHashMap);
     }
 
     @Override
     public MaterialType getMaterialType(int id)
     {
-        return null;
+        return materialTypeHashMap.get(id);
+    }
+
+    private final HashMap<Integer, MaterialUsageHistory> materialUsageHistoryHashMap = new HashMap<>();
+    {
+
     }
 
     @Override
     public List<MaterialUsageHistory> getMaterialUsageHistories()
     {
-        return null;
+        return getValuesAsList(materialUsageHistoryHashMap);
     }
 
     @Override
     public List<MaterialUsageHistory> getMaterialUsageHistories(MaterialType materialType)
     {
-        return null;
+        List<MaterialUsageHistory> list = new LinkedList<>();
+        for(MaterialUsageHistory history : materialUsageHistoryHashMap.values())
+        {
+            if(history.materialTypeId == materialType.id)
+            {
+                list.add(history);
+            }
+        }
+        return list;
     }
 
     @Override
     public List<MaterialUsageHistory> getMaterialUsageHistories(Project project)
     {
-        return null;
+        List<MaterialUsageHistory> list = new LinkedList<>();
+        for(MaterialUsageHistory history : materialUsageHistoryHashMap.values())
+        {
+            if(history.projectId == project.id)
+            {
+                list.add(history);
+            }
+        }
+        return list;
     }
 
     @Override
     public MaterialUsageHistory getMaterialUsageHistory(int id)
     {
-        return null;
+        return materialUsageHistoryHashMap.get(id);
     }
 
     @Override
     public void setMaterialUsageHistory(MaterialUsageHistory materialUsageHistory)
     {
+        if(materialUsageHistory.id == null)
+        {
+            materialUsageHistory.id = materialUsageHistoryHashMap.size();
+        }
+        materialUsageHistoryHashMap.put(materialUsageHistory.id, materialUsageHistory);
+    }
 
+    private final HashMap<Integer, Transaction> transactionHashMap = new HashMap<>();
+    {
+        Transaction transaction = new Transaction();
+        transaction.amount = 200d;
+        transaction.date = new Date(2003,5,3);
+        transaction.time = new Time(5,5,5);
+        transaction.transactionTypeId = 0;
+        setTransaction(transaction);
     }
 
     @Override
     public List<Transaction> getTransactions()
     {
-        return null;
+        return getValuesAsList(transactionHashMap);
     }
 
     @Override
     public List<Transaction> getTransactions(TransactionType transactionType)
     {
-        return null;
+        List<Transaction> list = new LinkedList<>();
+        for(Transaction transaction: transactionHashMap.values())
+        {
+            if(transaction.transactionTypeId == transactionType.id)
+            {
+                list.add(transaction);
+            }
+        }
+        return list;
     }
 
     @Override
     public Transaction getTransaction(int id)
     {
-        return null;
+        return transactionHashMap.get(id);
     }
 
     @Override
     public void setTransaction(Transaction transaction)
     {
+        if(transaction.id == null)
+        {
+            transaction.id = transactionHashMap.size();
+        }
+        transactionHashMap.put(transaction.id, transaction);
+    }
 
+    private final HashMap<Integer, TransactionType> transactionTypeHashMap = new HashMap<>();
+    {
+        TransactionType type = new TransactionType();
+        type.type = "cash";
+        type.id = transactionTypeHashMap.size();
+        transactionTypeHashMap.put(type.id, type);
     }
 
     @Override
     public List<TransactionType> getTransactionTypes()
     {
-        return null;
+        return getValuesAsList(transactionTypeHashMap);
     }
 
     @Override
     public TransactionType getTransactionType(int id)
     {
-        return null;
+        return transactionTypeHashMap.get(id);
+    }
+
+    private final HashMap<Integer, Warehouse> warehouseHashMap = new HashMap<>();
+    {
+
     }
 
     @Override
     public List<Warehouse> getWarehouses()
     {
-        return null;
+        return getValuesAsList(warehouseHashMap);
     }
 
     @Override
     public Warehouse getWarehouse(int id)
     {
-        return null;
+        return warehouseHashMap.get(id);
+    }
+
+    private final HashMap<Integer, WarehouseType> warehouseTypeHashMap = new HashMap<>();
+    {
+        WarehouseType type = new WarehouseType();
+        type.type = "storage";
+        type.id = warehouseTypeHashMap.size();
+        warehouseTypeHashMap.put(type.id, type);
     }
 
     @Override
     public List<WarehouseType> getWarehouseTypes()
     {
-        return null;
+        return getValuesAsList(warehouseTypeHashMap);
     }
 
     @Override
     public WarehouseType getWarehouseType(int id)
     {
-        return null;
+        return warehouseTypeHashMap.get(id);
+    }
+
+    private final HashMap<Integer, Assignment> assignmentHashMap = new HashMap<>();
+    {
+
     }
 
     @Override
     public List<Assignment> getAssignments(Project project)
     {
-        return null;
+        List<Assignment> list = new LinkedList<>();
+        for(Assignment assignment : assignmentHashMap.values())
+        {
+            if(assignment.projectId == project.id)
+            {
+                list.add(assignment);
+            }
+        }
+        return list;
     }
 
     @Override
     public List<Assignment> getAssignments(Employee employee)
     {
-        return null;
+        List<Assignment> list = new LinkedList<>();
+        for(Assignment assignment : assignmentHashMap.values())
+        {
+            if(assignment.employeeId == employee.id)
+            {
+                list.add(assignment);
+            }
+        }
+        return list;
     }
 
     @Override
     public Assignment getAssignment(int id)
     {
-        return null;
+        return assignmentHashMap.get(id);
     }
 
     @Override
     public void setAssignment(Assignment assignment)
     {
+        if(assignment.id == null)
+        {
+            assignment.id = assignmentHashMap.size();
+        }
 
+        assignmentHashMap.put(assignment.id, assignment);
     }
 
     @Override
     public void deleteAssignment(int id)
+    {
+        assignmentHashMap.remove(id);
+    }
+
+    private final HashMap<Integer, Project> projectHashMap = new HashMap<>();
     {
 
     }
@@ -1182,35 +1345,68 @@ public class TestDatabaseAccess implements IDatabaseAccess
     @Override
     public List<Project> getProjects()
     {
-        return null;
+        return getValuesAsList(projectHashMap);
     }
 
     @Override
     public List<Project> getProjects(Client client)
     {
-        return null;
+        List<Project> list = new LinkedList<>();
+        for(Project project : projectHashMap.values())
+        {
+            if(project.clientId == client.id)
+            {
+                list.add(project);
+            }
+        }
+        return list;
     }
 
     @Override
     public List<Project> getProjects(Supervisor supervisor)
     {
-        return null;
+        List<Project> list = new LinkedList<>();
+        for(Project project : projectHashMap.values())
+        {
+            if(project.supervisorId == supervisor.id)
+            {
+                list.add(project);
+            }
+        }
+        return list;
     }
 
     @Override
     public List<Project> getProjects(ProjectStatus projectStatus)
     {
-        return null;
+        List<Project> list = new LinkedList<>();
+        for(Project project : projectHashMap.values())
+        {
+            if(project.projectStatusId == projectStatus.id)
+            {
+                list.add(project);
+            }
+        }
+        return list;
     }
 
     @Override
     public Project getProject(int id)
     {
-        return null;
+        return projectHashMap.get(id);
     }
 
     @Override
     public void setProject(Project project)
+    {
+        if(project.id == null)
+        {
+            project.id = projectHashMap.size();
+        }
+        projectHashMap.put(project.id, project);
+    }
+
+    private final HashMap<Integer, ProjectNote> projectNoteHashMap = new HashMap<>();
     {
 
     }
@@ -1218,17 +1414,35 @@ public class TestDatabaseAccess implements IDatabaseAccess
     @Override
     public List<ProjectNote> getProjectNotes(Project project)
     {
-        return null;
+        List<ProjectNote> list = new LinkedList<>();
+        for(ProjectNote note : projectNoteHashMap.values())
+        {
+            if(note.projectId == project.id)
+            {
+                list.add(note);
+            }
+        }
+        return list;
     }
 
     @Override
-    public ProjectNote getProjectNote()
+    public ProjectNote getProjectNote(int id)
     {
-        return null;
+        return projectNoteHashMap.get(id);
     }
 
     @Override
     public void setProjectNote(ProjectNote projectNote)
+    {
+        if(projectNote.id == null)
+        {
+            projectNote.id = projectNoteHashMap.size();
+        }
+
+        projectNoteHashMap.put(projectNote.id, projectNote);
+    }
+
+    private final HashMap<Integer, ProjectSchedule> projectScheduleHashMap = new HashMap<>();
     {
 
     }
@@ -1236,83 +1450,147 @@ public class TestDatabaseAccess implements IDatabaseAccess
     @Override
     public List<ProjectSchedule> getProjectSchedules()
     {
-        return null;
+        return getValuesAsList(projectScheduleHashMap);
     }
 
     @Override
     public List<ProjectSchedule> getProjectSchedules(Project project)
     {
-        return null;
+        List<ProjectSchedule> list = new LinkedList<>();
+        for(ProjectSchedule schedule : projectScheduleHashMap.values())
+        {
+            if(schedule.projectId == project.id)
+            {
+                list.add(schedule);
+            }
+        }
+        return list;
     }
 
     @Override
     public ProjectSchedule getProjectSchedule(int id)
     {
-        return null;
+        return projectScheduleHashMap.get(id);
     }
 
     @Override
     public void setProjectSchedule(ProjectSchedule projectSchedule)
     {
-
+        if(projectSchedule.id == null)
+        {
+            projectSchedule.id = projectScheduleHashMap.size();
+        }
+        projectScheduleHashMap.put(projectSchedule.id, projectSchedule);
     }
 
     @Override
     public void deleteProjectSchedule(int id)
     {
+        projectScheduleHashMap.remove(id);
+    }
 
+    private final HashMap<Integer, ProjectStatus> projectStatusHashMap = new HashMap<>();
+    {
+        ProjectStatus status = new ProjectStatus();
+        status.description = "finished";
+        status.id = projectStatusHashMap.size();
+        projectStatusHashMap.put(status.id, status);
     }
 
     @Override
     public List<ProjectStatus> getProjectStatus()
     {
-        return null;
+        return getValuesAsList(projectStatusHashMap);
     }
 
     @Override
     public ProjectStatus getProjectStatus(int id)
     {
-        return null;
+        return projectStatusHashMap.get(id);
+    }
+
+    private final HashMap<Integer, PurchaseHistory> purchaseHistoryHashMap = new HashMap<>();
+    {
+
     }
 
     @Override
     public List<PurchaseHistory> getPurchaseHistories()
     {
-        return null;
+        return getValuesAsList(purchaseHistoryHashMap);
     }
 
     @Override
     public List<PurchaseHistory> getPurchaseHistories(Vendor vendor)
     {
-        return null;
+        List<PurchaseHistory> list = new LinkedList<>();
+        for(PurchaseHistory history : purchaseHistoryHashMap.values())
+        {
+            if(history.vendorId == vendor.id)
+            {
+                list.add(history);
+            }
+        }
+        return list;
     }
 
     @Override
     public List<PurchaseHistory> getPurchaseHistories(MaterialType materialType)
     {
-        return null;
+        List<PurchaseHistory> list = new LinkedList<>();
+        for(PurchaseHistory history : purchaseHistoryHashMap.values())
+        {
+            if(history.materialTypeId == materialType.id)
+            {
+                list.add(history);
+            }
+        }
+        return list;
     }
 
     @Override
     public PurchaseHistory getPurchaseHistory(int id)
     {
-        return null;
+        return purchaseHistoryHashMap.get(id);
     }
 
     @Override
     public PurchaseHistory getPurchaseHistory(Transaction transaction)
     {
+        for(PurchaseHistory history : purchaseHistoryHashMap.values())
+        {
+            if(history.transactionId == transaction.id)
+            {
+               return history;
+            }
+        }
         return null;
     }
 
     @Override
     public PurchaseHistory getPurchaseHistory(MaterialStock materialStock)
     {
+        for(PurchaseHistory history : purchaseHistoryHashMap.values())
+        {
+            if(history.materialTypeId == materialStock.id)
+            {
+                return history;
+            }
+        }
         return null;
     }
 
     @Override
     public void setPurchaseHistory(PurchaseHistory purchaseHistory)
+    {
+        if(purchaseHistory.id == null)
+        {
+            purchaseHistory.id = purchaseHistoryHashMap.size();
+        }
+        purchaseHistoryHashMap.put(purchaseHistory.id, purchaseHistory);
+    }
+
+    private final HashMap<Integer, Vendor> vendorHashMap = new HashMap<>();
     {
 
     }
@@ -1320,17 +1598,26 @@ public class TestDatabaseAccess implements IDatabaseAccess
     @Override
     public List<Vendor> getVendors()
     {
-        return null;
+        return getValuesAsList(vendorHashMap);
     }
 
     @Override
     public Vendor getVendor(int id)
     {
-        return null;
+        return vendorHashMap.get(id);
     }
 
     @Override
     public void setVendor(Vendor vendor)
+    {
+        if(vendor.id == null)
+        {
+            vendor.id = vendorHashMap.size();
+        }
+        vendorHashMap.put(vendor.id, vendor);
+    }
+
+    private final HashMap<Integer, VendorBidding> vendorBiddingHashMap = new HashMap<>();
     {
 
     }
@@ -1338,35 +1625,61 @@ public class TestDatabaseAccess implements IDatabaseAccess
     @Override
     public List<VendorBidding> getVendorBiddingList()
     {
-        return null;
+        return getValuesAsList(vendorBiddingHashMap);
     }
 
     @Override
     public List<VendorBidding> getVendorBiddingList(Vendor vendor)
     {
-        return null;
+        List<VendorBidding> list = new LinkedList<>();
+        for(VendorBidding item : vendorBiddingHashMap.values())
+        {
+            if(item.vendorId == vendor.id)
+            {
+                list.add(item);
+            }
+        }
+        return list;
     }
 
     @Override
     public List<VendorBidding> getVendorBiddingList(MaterialType materialType)
     {
-        return null;
+        List<VendorBidding> list = new LinkedList<>();
+        for(VendorBidding item : vendorBiddingHashMap.values())
+        {
+            if(item.materialTypeId == materialType.id)
+            {
+                list.add(item);
+            }
+        }
+        return list;
     }
 
     @Override
     public VendorBidding getVendorBidding(int id)
     {
-        return null;
+        return vendorBiddingHashMap.get(id);
     }
 
     @Override
     public void setVendorBidding(VendorBidding vendorBidding)
     {
+        if(vendorBidding.id == null)
+        {
+            vendorBidding.id = vendorBiddingHashMap.size();
+        }
 
+        vendorBiddingHashMap.put(vendorBidding.id, vendorBidding);
     }
 
     @Override
     public void deleteVendorBidding(int id)
+    {
+        vendorBiddingHashMap.remove(id);
+    }
+
+    private final HashMap<Integer, VendorStatus> vendorStatusHashMap = new HashMap<>();
     {
 
     }
@@ -1374,13 +1687,13 @@ public class TestDatabaseAccess implements IDatabaseAccess
     @Override
     public List<VendorStatus> getVendorStatus()
     {
-        return null;
+        return getValuesAsList(vendorStatusHashMap);
     }
 
     @Override
     public VendorStatus getVendorStatus(int id)
     {
-        return null;
+        return vendorStatusHashMap.get(id);
     }
 
     private <K, V> List<V> getValuesAsList(HashMap<K, V> map)

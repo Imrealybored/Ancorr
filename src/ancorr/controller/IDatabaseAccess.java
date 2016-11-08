@@ -202,7 +202,7 @@ public interface IDatabaseAccess
 	
 	//List<ProjectNote> getProjectNotes();
 	List<ProjectNote> getProjectNotes(Project project);
-	ProjectNote getProjectNote();
+	ProjectNote getProjectNote(int id);
 	void setProjectNote(ProjectNote projectNote);
 	void deleteProjectNote(int id);
 	
