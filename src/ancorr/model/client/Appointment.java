@@ -8,7 +8,6 @@ public class Appointment
     //TODO: all the equals and to string methods.
 
     public Integer id;
-    public Integer clientId;
 
     public Date date;
     public Time time;
