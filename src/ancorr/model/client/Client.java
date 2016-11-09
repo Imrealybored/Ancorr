@@ -3,16 +3,19 @@ package ancorr.model.client;
 public class Client
 {
     public Integer id;
-    public Integer contactId;
-    public Integer clientStatusId;
-
+    public Integer clientStatusId; 
+    public Integer clientBillingId;
+    public Integer addressId;
+	
     public String firstName;
     public String lastName;
+    public String email;
+    public String phone;
 	
 	@Override
 	public String toString()
 	{
-		return firstName + " " + lastName;
+		return firstName + " " + lastName + " " + email + " " + phone;
 	}
 
 	@Override
